@@ -68,7 +68,7 @@ export function Asian() {
 	return (
 		<>
 			<Outlet />
-			<div className='recipeContainer'>
+			<div className='recipeCardContainer'>
 				{recipes.map((recipe) => (
 					<RecipeCard key={recipe.id} recipe={recipe} />
 				))}
@@ -81,9 +81,9 @@ function RecipeCard({ recipe }) {
 	return (
 		<div className='recipeCard'>
 			<a href={recipe.sourceUrl}>
-				<img src={recipe.image} alt={recipe.title} />
-				<h2>{recipe.title}</h2>
-				<p>Ready in {recipe.readyInMinutes} minutes</p>
+				<img className='recipeImage' src={recipe.image} alt={recipe.title} />
+				<h2 className='recipeTitle'>{recipe.title}</h2>
+				<p className='recipeText'>Ready in {recipe.readyInMinutes} minutes</p>
 			</a>
 		</div>
 	);
