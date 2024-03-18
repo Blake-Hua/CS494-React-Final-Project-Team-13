@@ -7,7 +7,6 @@ export function ErrorPage() {
     return (
         <>
             <h1 className="title">Error: 404 Page Not Found</h1>      
-            {/* <p>{error.statusText || error.message}</p>   */}
         </>
     )
 }

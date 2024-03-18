@@ -11,9 +11,9 @@ export function Root(props) {
                         <p><NavLink to="/">Flavor Quest</NavLink></p>
                     </nav>
                     <nav className="threeNav">
-                        <p><NavLink to="/people">Asian</NavLink></p>
-                        <p><NavLink to="/planets">American</NavLink></p>
-                        <p><NavLink to="/films">Mexican</NavLink></p>
+                        <p><NavLink to="/Asian">Asian</NavLink></p>
+                        <p><NavLink to="/American">American</NavLink></p>
+                        <p><NavLink to="/Mexican">Mexican</NavLink></p>
                         {/* <p><NavLink to="/">Search</NavLink></p> */}
                     </nav>
                 </ul>
