@@ -56,7 +56,6 @@ function RecipeCard({ recipe }) {
 			<a href={recipe.sourceUrl}>
 				<img className='recipeImage' src={recipe.image} alt={recipe.title} />
 				<h2 className='recipeTitle'>{recipe.title}</h2>
-				<p className='recipeText'>Ready in {recipe.readyInMinutes} minutes</p>
 			</a>
 		</div>
 	);
