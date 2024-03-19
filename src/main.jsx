@@ -1,57 +1,58 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { Home } from './pages/Home'
-import { People, PersonDetails } from './pages/People'
-import { Planets, PlanetDetails} from './pages/Planets'
-import { Films, FilmDetails} from './pages/Films'
-import { Root } from './Root'
-import { ErrorPage } from './pages/Error'
+
+// import { Home, People, Planets, Films, Root, PersonDetails, PlanetDetails, FilmDetails, ErrorPage} from './Routes'
+import { Home } from "./pages/Home";
+import { Asian } from "./pages/Asian";
+import { American } from "./pages/American";
+import { Mexican } from "./pages/Mexican";
+import { RecipeInfo } from "./pages/RecipeInfo";
+import { Root } from "./Root";
+import { ErrorPage } from "./pages/Error";
+
+import "./index.css";
 
 import SearchResults from './pages/SearchResults'
 
-import './index.css'
-
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-        errorElement: <Root><SearchResults /></Root>,
-        children: [
-            { index: true, element: <Home/>},
-            {    
-                path: "/people", 
-                element: <People/>,
-                children: [
-                    { path: ":personDetails", element: <PersonDetails/> }
-                ]
-            },
-            { 
-                path: "/planets", 
-                element: <Planets/>,
-                children: [
-                    { path: ":planetDetails", element: <PlanetDetails/> }
-                ]            
-            },
-            {
-                path: "/films", 
-                element: <Films/>,
-                children: [
-                    { path: ":filmDetails", element: <FilmDetails/>}
-                ]
-            },
-            {
-                path: "/searched/:searchTerm",
-                element: <SearchResults/>
-            }
-        ]
-    },
+	{
+		path: "/",
+		element: <Root />,
+		errorElement: (
+			<Root>
+				<ErrorPage />
+			</Root>
+		),
+		children: [
+			{ index: true, element: <Home /> },
+			{
+				path: "/asian",
+				element: <Asian />,
+			},
+			{
+				path: "/american",
+				element: <American />,
+			},
+			{
+				path: "/mexican",
+				element: <Mexican />,
+			},
+			{
+				path: "/recipe/:recipeid",
+				element: <RecipeInfo />,
+			},
+      {
+        path: "/searched/:searchTerm",
+        element: <SearchResults/>
+      },
+		],
+	},
 ]);
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <RouterProvider router={router} />
-    </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+	<React.StrictMode>
+		<RouterProvider router={router} />
+	</React.StrictMode>
+);

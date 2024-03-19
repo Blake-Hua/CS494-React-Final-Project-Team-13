@@ -1,5 +1,5 @@
-import React from "react"
-import { Outlet, NavLink } from "react-router-dom"
+import React from "react";
+import { Outlet, NavLink } from "react-router-dom";
 
 export function Root(props) {
     const { children } = props
@@ -22,3 +22,4 @@ export function Root(props) {
         </>
     )
 }
+
