@@ -47,13 +47,17 @@ export function GetCards(props) {
 	);
 }
 
+// when the card is clicked navigate to /recipe/:recipeid where recipeid is the id of the recipe
+
 function RecipeCard({ recipe }) {
 	return (
 		<div className='recipeCard'>
-			<a href={recipe.sourceUrl}>
-				<img className='recipeImage' src={recipe.image} alt={recipe.title} />
-				<h2 className='recipeTitle'>{recipe.title}</h2>
-			</a>
+			<Link to={`/recipe/${recipe.id}`}>
+				<a href={recipe.sourceUrl}>
+					<img className='recipeImage' src={recipe.image} alt={recipe.title} />
+					<h2 className='recipeTitle'>{recipe.title}</h2>
+				</a>
+			</Link>
 		</div>
 	);
 }
