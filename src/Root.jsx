@@ -17,10 +17,10 @@ export function Root(props) {
 							<NavLink to='/asian'>Asian</NavLink>
 						</p>
 						<p>
-							<NavLink to='/planets'>American</NavLink>
+							<NavLink to='/american'>American</NavLink>
 						</p>
 						<p>
-							<NavLink to='/films'>Mexican</NavLink>
+							<NavLink to='/mexican'>Mexican</NavLink>
 						</p>
 						{/* <p><NavLink to="/">Search</NavLink></p> */}
 					</nav>

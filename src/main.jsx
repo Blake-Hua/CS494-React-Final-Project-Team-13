@@ -4,9 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // import { Home, People, Planets, Films, Root, PersonDetails, PlanetDetails, FilmDetails, ErrorPage} from './Routes'
 import { Home } from "./pages/Home";
-import { Asian, People, PersonDetails } from "./pages/Asian";
-import { Planets, PlanetDetails } from "./pages/Planets";
-import { Films, FilmDetails } from "./pages/Films";
+import { Asian } from "./pages/Asian";
+import { American } from "./pages/American";
+import { Mexican } from "./pages/Mexican";
 import { Root } from "./Root";
 import { ErrorPage } from "./pages/Error";
 
@@ -26,17 +26,17 @@ const router = createBrowserRouter([
 			{
 				path: "/asian",
 				element: <Asian />,
-				children: [{ path: ":personDetails", element: <PersonDetails /> }],
+				// children: [{ path: ":personDetails", element: <PersonDetails /> }],
 			},
 			{
-				path: "/planets",
-				element: <Planets />,
-				children: [{ path: ":planetDetails", element: <PlanetDetails /> }],
+				path: "/american",
+				element: <American />,
+				// children: [{ path: ":planetDetails", element: <PlanetDetails /> }],
 			},
 			{
-				path: "/films",
-				element: <Films />,
-				children: [{ path: ":filmDetails", element: <FilmDetails /> }],
+				path: "/mexican",
+				element: <Mexican />,
+				// children: [{ path: ":filmDetails", element: <FilmDetails /> }],
 			},
 		],
 	},
