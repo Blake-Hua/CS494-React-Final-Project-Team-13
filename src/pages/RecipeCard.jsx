@@ -25,7 +25,7 @@ export function GetCards(props) {
 				params: {
 					apiKey: API_KEY,
 					query: query,
-					number: 10,
+					number: 15,
 				},
 			}
 		);
