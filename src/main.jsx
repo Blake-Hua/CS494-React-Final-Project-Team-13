@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { Asian } from "./pages/Asian";
 import { American } from "./pages/American";
 import { Mexican } from "./pages/Mexican";
+import { RecipeInfo } from "./pages/RecipeInfo";
 import { Root } from "./Root";
 import { ErrorPage } from "./pages/Error";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
 				path: "/mexican",
 				element: <Mexican />,
 				// children: [{ path: ":filmDetails", element: <FilmDetails /> }],
+			},
+			{
+				path: "/recipe/:recipeid",
+				element: <RecipeInfo />,
 			},
 		],
 	},

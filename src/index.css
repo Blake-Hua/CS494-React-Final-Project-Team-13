@@ -139,6 +139,12 @@ nav a.active {
 /* The cards should be styled in a grid  */
 /* have the cards fit width wise across the screen then overflow to another row*/
 
+/* remove highlighted links  */
+
+a:link {
+	text-decoration: none;
+}
+
 .recipeCardContainer {
 	display: flex;
 	flex-wrap: wrap;
@@ -171,9 +177,38 @@ nav a.active {
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 10px;
+	color: rgb(0, 0, 0);
 }
 
 .recipeText {
 	font-size: 16px;
+	text-align: center;
+}
+
+/* Styling for Recipe Info page */
+.recipeInfoContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.recipeInfoImage {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+
+.recipeInfoTitle {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: rgb(0, 0, 0);
+}
+
+.recipeInfoText {
+	font-size: 20px;
 	text-align: center;
 }
