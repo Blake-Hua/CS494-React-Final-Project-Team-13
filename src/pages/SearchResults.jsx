@@ -3,21 +3,24 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import { SearchBar } from "../components/SearchBar";
 
 function SearchResults() {
     let params = useParams();
     const [searchedRecipes, setSearchedRecipes] = useState([]);
+    const apiKey = import.meta.env.VITE_APP_KEY;
 
     const getSearched = async (name) => {
         try {
-            const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
-                params: {
-                    apiKey: import.meta.env.VITE_APP_KEY,
-                    query: name,
-                },
+            const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}`, {
+                // params: {
+                //     apiKey: import.meta.env.VITE_APP_KEY,
+                //     query: name,
+                // },
             });
             setSearchedRecipes(response.data.results);
             console.log(response.data);
+            console.log(name);
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
@@ -28,6 +31,8 @@ function SearchResults() {
     }, [params.searchTerm]);
 
     return (
+        <>
+        <SearchBar/>
         <Grid>
             {searchedRecipes.map((item) => {
                 return (
@@ -41,6 +46,7 @@ function SearchResults() {
                 );
             })}
         </Grid>
+        </>
     );
 }
 
@@ -52,6 +58,7 @@ const Grid = styled.div`
 
 const Card = styled.div`
     img {
+        // padding: 1rem;
         width: 100%;
         border-radius: 2rem;
     }
@@ -61,6 +68,12 @@ const Card = styled.div`
     h4 {
         text-align: center;
         padding: 1rem;
+    }
+    /* Adding a shadow to each card */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+    transition: 0.3s; /* Smooth transition for hover effect */
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19); /* Larger shadow for hover effect */
     }
 `;
 
