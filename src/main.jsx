@@ -27,17 +27,14 @@ const router = createBrowserRouter([
 			{
 				path: "/asian",
 				element: <Asian />,
-				// children: [{ path: ":personDetails", element: <PersonDetails /> }],
 			},
 			{
 				path: "/american",
 				element: <American />,
-				// children: [{ path: ":planetDetails", element: <PlanetDetails /> }],
 			},
 			{
 				path: "/mexican",
 				element: <Mexican />,
-				// children: [{ path: ":filmDetails", element: <FilmDetails /> }],
 			},
 			{
 				path: "/recipe/:recipeid",
