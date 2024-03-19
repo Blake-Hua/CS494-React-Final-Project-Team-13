@@ -1,5 +1,4 @@
-import { SearchBar } from '../components/SearchBar'; // Adjust the path according to your file structure
-
+import { SearchBar } from '../components/SearchBar'; 
 export function Home() {
     return (
         <>
