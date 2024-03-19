@@ -43,8 +43,8 @@ export function RecipeInfo() {
 				></p>
 				<h2 className='recipeIngredients'>Ingredients</h2>
 				<ul className='recipeIngredientsList'>
-					{ingredients.map((ingredient) => (
-						<li key={ingredient.id}>{ingredient.original}</li>
+					{ingredients.map((ingredient, index) => (
+						<li key={index}>{ingredient.original}</li>
 					))}
 				</ul>
 				<h2 className='recipeInstructions'>Instructions</h2>

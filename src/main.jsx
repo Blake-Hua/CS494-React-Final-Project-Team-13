@@ -43,10 +43,10 @@ const router = createBrowserRouter([
 				path: "/recipe/:recipeid",
 				element: <RecipeInfo />,
 			},
-      {
-        path: "/searched/:searchTerm",
-        element: <SearchResults/>
-      },
+            {
+                path: "/searched/:searchTerm",
+                element: <SearchResults/>
+            },
 		],
 	},
 ]);
