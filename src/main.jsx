@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
 // import { Home, People, Planets, Films, Root, PersonDetails, PlanetDetails, FilmDetails, ErrorPage} from './Routes'
 import { Home } from "./pages/Home";
 import { Asian } from "./pages/Asian";
@@ -12,6 +13,8 @@ import { Root } from "./Root";
 import { ErrorPage } from "./pages/Error";
 
 import "./index.css";
+
+import SearchResults from './pages/SearchResults'
 
 const router = createBrowserRouter([
 	{
@@ -40,6 +43,10 @@ const router = createBrowserRouter([
 				path: "/recipe/:recipeid",
 				element: <RecipeInfo />,
 			},
+      {
+        path: "/searched/:searchTerm",
+        element: <SearchResults/>
+      },
 		],
 	},
 ]);
